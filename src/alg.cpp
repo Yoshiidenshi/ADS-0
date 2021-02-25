@@ -2,10 +2,8 @@
 
 int gcd(int a, int b) {
   int t;
-    while (b != 0) {
-      t = b;
-      b = a % b;
-      a = t;
-   }
-   return a;
+  if (b == 0)
+    return a;
+
+  return gcd(b, a % b);
 }
